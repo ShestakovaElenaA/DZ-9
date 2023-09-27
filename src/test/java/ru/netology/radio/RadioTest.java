@@ -109,6 +109,18 @@ public class RadioTest {
     }
 
     @Test
+    public void changingStationsNext8to9() {
+        Radio RadioStation = new Radio();
+        RadioStation.setCurrentRadioStationNumber(8);
+        RadioStation.nextRadioStationNumber();
+
+        int expected = 9;
+        int atual = RadioStation.getCurrentRadioStationNumber();
+
+        Assertions.assertEquals(expected, atual);
+    }
+
+    @Test
     public void changingStationsPrevt0to9() {
         Radio RadioStation = new Radio();
         RadioStation.setCurrentRadioStationNumber(0);
