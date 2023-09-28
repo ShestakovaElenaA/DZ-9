@@ -121,6 +121,18 @@ public class RadioTest {
     }
 
     @Test
+    public void changingStationsNext10to1() {
+        Radio RadioStation = new Radio();
+        RadioStation.setCurrentRadioStationNumber(10);
+        RadioStation.nextRadioStationNumber();
+
+        int expected = 1;
+        int atual = RadioStation.getCurrentRadioStationNumber();
+
+        Assertions.assertEquals(expected, atual);
+    }
+
+    @Test
     public void changingStationsPrevt0to9() {
         Radio RadioStation = new Radio();
         RadioStation.setCurrentRadioStationNumber(0);
@@ -151,6 +163,30 @@ public class RadioTest {
         RadioStation.prevRadioStationNumber();
 
         int expected = 4;
+        int atual = RadioStation.getCurrentRadioStationNumber();
+
+        Assertions.assertEquals(expected, atual);
+    }
+
+    @Test
+    public void changingStationsPrevt1to0() {
+        Radio RadioStation = new Radio();
+        RadioStation.setCurrentRadioStationNumber(1);
+        RadioStation.prevRadioStationNumber();
+
+        int expected = 0;
+        int atual = RadioStation.getCurrentRadioStationNumber();
+
+        Assertions.assertEquals(expected, atual);
+    }
+
+    @Test
+    public void changingStationsPrevNegativeto9() {
+        Radio RadioStation = new Radio();
+        RadioStation.setCurrentRadioStationNumber(-1);
+        RadioStation.prevRadioStationNumber();
+
+        int expected = 9;
         int atual = RadioStation.getCurrentRadioStationNumber();
 
         Assertions.assertEquals(expected, atual);
