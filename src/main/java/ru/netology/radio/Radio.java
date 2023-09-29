@@ -33,27 +33,23 @@ public class Radio {
     }
 
     public void nextRadioStationNumber() {
-        if (currentRadioStationNumber >= 9) {
+        if (currentRadioStationNumber == 9) {
             setCurrentRadioStationNumber(0);
             {
                 return;
             }
         }
-        if (currentRadioStationNumber < 9) {
-            currentRadioStationNumber = currentRadioStationNumber + 1;
-        }
+        currentRadioStationNumber = currentRadioStationNumber + 1;
     }
 
     public void prevRadioStationNumber() {
-        if (currentRadioStationNumber <= 0) {
+        if (currentRadioStationNumber == 0) {
             currentRadioStationNumber = 9;
             {
                 return;
             }
         }
-        if (currentRadioStationNumber > 0) {
-            currentRadioStationNumber = currentRadioStationNumber - 1;
-        }
+        currentRadioStationNumber = currentRadioStationNumber - 1;
     }
 
     public void increaseVolume() {
